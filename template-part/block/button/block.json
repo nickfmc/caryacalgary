@@ -1,0 +1,16 @@
+{
+    "name": "acf/button-block",
+    "title": "Button",
+    "description": "Custom Button",
+    "icon": "button",
+    "keywords": ["button"],
+    "category": "originblocks",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "button.php"
+    },
+    "example": {
+        "attributes": {}
+    },
+    "align": "full"
+}

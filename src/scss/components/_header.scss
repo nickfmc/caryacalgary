@@ -1,0 +1,16 @@
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.c-page-header {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: 100px;  
+  padding-left: 25px;
+  padding-right: 25px;
+  // enable styles below for usage with headroom.js
+  // position: fixed;
+  // top: 0;
+  // width: 100%;
+  // z-index: z(overlay);
+}
