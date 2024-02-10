@@ -1,0 +1,60 @@
+.c-gallery{
+    display: grid; 
+    width: 100%; 
+    &.Scattered {
+        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-rows: 1.4fr 0.6fr; 
+        gap: 20px; 
+        grid-template-areas: 
+          "Image-One Image-Three-Start"
+          "Image-Two Image-Three-End"; 
+        .c-gallery-img-one {
+            grid-area: Image-One;
+        }
+        .c-gallery-img-two {
+            grid-area: Image-Two;
+            padding-left: 50px;
+        }
+        .c-gallery-img-three {
+            grid-area: Image-Three-Start;
+            grid-row-end: span 2
+
+        }
+    }
+    &.Offset {
+        gap: 20px; 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: 0.7fr 1.7fr 0.6fr;  
+        grid-template-areas: 
+          ". . ."
+          ". . ."
+          ". . ."; 
+        width: 100%; 
+        .c-gallery-img-one {
+            grid-column-start: 1;
+            grid-row-start: 1;
+            grid-row-end: span 2;
+        }
+        .c-gallery-img-two {
+            grid-column-start: 2;
+            grid-row-start: 2;
+            grid-row-end: span 2;
+        }
+        .c-gallery-img-three {
+            grid-column-start: 3;
+            grid-row-start: 1;
+            grid-row-end: span 2;
+
+        }
+    }
+    img {
+        object-fit: cover;
+        height: 100%;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+    }
+}
+
+
+// Swiper

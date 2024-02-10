@@ -1,0 +1,16 @@
+{
+    "name": "acf/gallery-block",
+    "title": "Gallery",
+    "description": "Custom Image Block",
+    "icon": "format-gallery",
+    "keywords": ["gallery", "images", "photos"],
+    "category": "myblocks",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "gallery.php"
+    },
+    "example": {
+        "attributes": {} 
+    },
+    "align": "full"
+}

@@ -20,7 +20,8 @@
     "headroom.js": "^0.10.3",
     "magnific-popup": "^1.1.0",
     "objectFitPolyfill": "^2.3.0",
-    "script-loader": "^0.7.2"
+    "script-loader": "^0.7.2",
+    "swiper": "^11.0.6"
   },
   "dependencies": {
     "sass-migrator": "^2.0.2",

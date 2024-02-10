@@ -1,5 +1,7 @@
 // ++ SETTINGS +++++++++++++++++++++++++++++++++
-@import "./scss/settings/_variables.scss";
+@import "./scss/settings/_fonts.scss";
+@import "./scss/settings/_variables.scss"; 
+
 
 
 // ++ TOOLS +++++++++++++++++++++++++++++++++
@@ -15,6 +17,7 @@
 // @import "../node_modules/aos/dist/aos.css";
 
 @import "../node_modules/magnific-popup/dist/magnific-popup.css";
+@import "../node_modules/swiper/swiper-bundle.min.css"; 
 // @import "../node_modules/slick-carousel/slick/slick.css";
 
 
@@ -39,8 +42,11 @@
 // ++ COMPONENTS +++++++++++++++++++++++++++++++++
 @import "./scss/components/_blocks-default.scss";
 @import "./scss/components/_buttons.scss";
+@import "./scss/components/_swipers.scss";
 @import "./scss/components/_footer-widgets.scss";
 @import "./scss/components/_footer.scss";
+@import "./scss/components/_blog.scss";
+@import "./scss/components/_small_blocks.scss";
 @import "./scss/components/_header.scss";
 @import "./scss/components/_logo-main.scss";
 @import "./scss/components/_nav-main.scss";

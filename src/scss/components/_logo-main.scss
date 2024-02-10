@@ -11,11 +11,11 @@
   }
   & img {
     display: block;
-    width: 150px;
+    width: 100px;
     height: auto;
     max-height: $page-header-height;
     @media (width >= $bp-medium) {
-      width: 250px;
+      width: 100px;
      } 
   }
 }

@@ -24,13 +24,20 @@ $page-header-height: 100px;
 // ++ COLOURS +++++++++++++++++++++++++++++++++
 $color-red:         #A82313;
 
-$color-secondary:       #529564;
+$color-secondary:       #593084;
+$color-carya-orange:    #e17241;
+$color-carya-green:     #8a7a34;
+$color-carya-blue:      #65b4e2;
+$color-carya-purple:    #593084;
+$color-carya-purple-light:    #8364a3;
+$color-carya-yellow:      #e4a726;
 
-$color-gray-light:        #EAEAEA;
-$color-gray-med:        #ACACAC;
-$color-gray-dark:        #323232;
+$color-gray-lightest:        #e7e7e7;
+$color-gray-light:        #c4c4c4;
+$color-gray-med:        #888989;
+$color-gray-dark:        #4d4e4f;
 
-$color-black:           #000;
+$color-black:           #121314;
 $color-white:           #FFF;
 
 // assign colours to variables
@@ -50,8 +57,8 @@ $logo-size: 300px;
 
 // ++ TYPOGRAPHY +++++++++++++++++++++++++++++++++
 // Fonts
-$font-primary: 'Arial', sans-serif;
-$font-secondary: 'Times New Roman', serif;
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'MuseoSans', sans-serif;
 
 // Spacing
 $line-height-normal: 1.50;

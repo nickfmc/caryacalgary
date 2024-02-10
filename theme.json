@@ -10,33 +10,58 @@
 			"palette": [
 				{
                     "name": "Black",
-					"slug": "black",
+					"slug": "maw-black",
 					"color": "#000000"
 				},
 				{
-					"slug": "white",
+					"slug": "maw-white",
 					"color": "#FFFFFF",
 					"name": "White"
 				},
                 {
 					"slug": "dark-grey",
-					"color": "#121212",
+					"color": "#4d4e4f",
 					"name": "Dark grey"
 				},
 				{
 					"slug": "medium-grey",
-					"color": "#383838",
+					"color": "#888989",
 					"name": "Medium grey"
 				},
 				{
-					"slug": "cyan",
-					"color": "#00838f",
-					"name": "Cyan"
+					"slug": "light-grey",
+					"color": "#c4c4c4",
+					"name": "Light grey"
 				},
 				{
-					"slug": "light-cyan",
-					"color": "#4fb3bf",
-					"name": "Light cyan" 
+					"slug": "lightest-grey",
+					"color": "#e7e7e7",
+					"name": "Lightest grey"
+				},
+				{
+					"slug": "purple",
+					"color": "#593084",
+					"name": "Carya Purple"
+				},
+				{
+					"slug": "orange",
+					"color": "#e17241",
+					"name": "Carya Orange"
+				},
+				{
+					"slug": "green",
+					"color": "#8a7a34",
+					"name": "Carya Green"
+				},
+				{
+					"slug": "blue",
+					"color": "#65b4e2",
+					"name": "Carya Blue"
+				},
+				{
+					"slug": "yeloow",
+					"color": "#e4a726",
+					"name": "Carya Yellow"
 				}
 			]
 		
@@ -46,6 +71,62 @@
         "wideSize": "1180px"
 	},
 	"typography": {
+		"fontFamilies": [
+			{
+				"fontFamily": "MuseoSans, sans-serif",
+				"name": "MuseoSans",
+				"slug": "secondary",
+				"fontFace": [
+					{
+						"fontDisplay": "block",
+						"fontFamily": "MuseoSans",
+						"fontStretch": "normal",
+						"fontStyle": "normal",
+						"fontWeight": "300",
+						"src": [ "file:./fonts/museosans_300-webfont.woff" ]
+					},
+					{
+						"fontDisplay": "block",
+						"fontFamily": "MuseoSans",
+						"fontStretch": "normal",
+						"fontStyle": "normal",
+						"fontWeight": "500",
+						"src": [ "file:./fonts/museosans_500-webfont.woff" ]
+					},
+					{
+						"fontDisplay": "block",
+						"fontFamily": "MuseoSans",
+						"fontStretch": "normal",
+						"fontStyle": "normal",
+						"fontWeight": "700",
+						"src": [ "file:./fonts/museosans_700-webfont.woff" ]
+					},
+					{
+						"fontDisplay": "block",
+						"fontFamily": "MuseoSans",
+						"fontStretch": "normal",
+						"fontStyle": "normal",
+						"fontWeight": "900",
+						"src": [ "file:./fonts/museosans_900-webfont.woff" ]
+					}
+				]
+			},
+			{
+				"fontFamily": "Roboto, sans-serif",
+				"name": "Roboto",
+				"slug": "primary",
+				"fontFace": [
+					{
+						"fontDisplay": "block",
+						"fontFamily": "Roboto",
+						"fontStretch": "normal",
+						"fontStyle": "normal",
+						"fontWeight": "400",
+						"src": [ "file:./fonts/Roboto-Medium.ttf" ]
+					}
+				]
+			}
+		],
 		"fontSizes": [
 			{
 				"slug": "small",

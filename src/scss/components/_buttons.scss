@@ -3,24 +3,24 @@
    ========================================================================== */
 
 .c-btn-primary {
-  display: block;
+  display: inline-flex;
   text-align: center;
   margin: 1rem 0 1.75rem 0;
 }
 .c-blk-btn a, .c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link {
-  background-color: $color-gray-med;
+  background-color: $color-carya-purple;
   border: none; 
   color: $color-white;
   display: inline-block;
   font-weight: 700;
   line-height: 1;
+  border-radius: 30px;
   text-transform: uppercase;
-  padding: 0.75rem 1.25rem;
+  padding: 15px 20px;
   transition: $transition-ease;
-  white-space: nowrap;
+  white-space: nowrap; 
   &:hover {
-    background-color: $color-gray-light;
-    color: $color-black;
+    background-color: $color-carya-purple-light;
   }
 }
 

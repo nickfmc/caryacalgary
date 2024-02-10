@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'MuseoSans';
+       src: url('../fonts/museosans_300-webfont.woff') format('woff'),
+            url('../fonts/museosans_300-webfont.woff') format('woff2'),
+            url('../fonts/museosans_300-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+ }
+ 
+ @font-face {
+    font-family: 'MuseoSans';
+       src: url('../fonts/museosans_500-webfont.woff') format('woff'),
+            url('../fonts/museosans_500-webfont.woff') format('woff2'),
+            url('../fonts/museosans_500-webfont.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+ }
+
+ @font-face {
+    font-family: 'MuseoSans';
+       src: url('../fonts/museosans_700-webfont.woff') format('woff'),
+            url('../fonts/museosans_700-webfont.woff') format('woff2'),
+            url('../fonts/museosans_700-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: 'MuseoSans';
+       src: url('../fonts/museosans_900-webfont.woff') format('woff'),
+            url('../fonts/museosans_900-webfont.woff') format('woff2'),
+            url('../fonts/museosans_900-webfont.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+ }

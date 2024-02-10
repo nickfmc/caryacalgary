@@ -12,6 +12,8 @@ register_nav_menus(
   array(
     'main-menu' => 'Primary Menu',           // main nav menu
     'tertiary-menu' => 'Tertiary Menu',      // tertiary nav menu
+    'footerone-menu' => 'Footer Left Side',      // tertiary nav menu
+    'footertwo-menu' => 'Footer Right Side',      // tertiary nav menu
     'mobile-menu' => 'Mobile Menu'      // mobile nav menu
   )
 );

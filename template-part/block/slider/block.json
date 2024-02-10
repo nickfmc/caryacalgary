@@ -3,7 +3,7 @@
     "title": "Slider",
     "description": "Custom Slider",
     "icon": "button",
-    "viewScript": [ "splide", "slider" ],
+    "script": [ "swiper", "effects", "slider" ],
     "keywords": ["slider"],
     "category": "myblocks",
     "acf": {

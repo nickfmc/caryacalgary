@@ -12,10 +12,10 @@
   .c-main-navigation {
     /* DISPLAY FULL SIZE MENU */
     display: block;
-    padding-left: calc(#{$logo-size} + 1rem);
-    position: absolute;
-    right: 0;
-    top: 0;
+
+    // position: absolute;
+    // right: 0;
+    // top: 0;
   }
 }
 

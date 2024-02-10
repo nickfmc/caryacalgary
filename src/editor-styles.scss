@@ -128,11 +128,5 @@ body .wp-block-column {
 	}
    }
   
-// // /* Width of "regular" blocks -- WHY DO I NEED THIS MESS TOOLSET!?!?! */
-.wp-block, 
- .wp-block[data-type^="toolset"]:not([data-align^="full"]), 
- div:not([class]) > .block-editor-block-list__layout > .wp-block:not([data-align^="full"]), 
- .tb-container > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block:not([data-align^="full"]) {
-	max-width: $wrapper-width-base !important;
-	z-index: 10;
-}
+
+

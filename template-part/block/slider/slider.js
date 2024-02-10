@@ -1,11 +1,6 @@
 (function($){
-    var splide = new Splide( '.splide', {
-        pagination : false
-        // type : 'fade'
-    } );
-    
-    
-    splide.mount();
+
+   
     /**
      * initializeBlock
      *
@@ -19,16 +14,22 @@
      * @return  void
      */
     var initializeBlock = function( $block ) {
-            //Custom Script goes here
-            
+        //Custom Script goes here
+
+        var swiper = new Swiper($block.find(".swiper").get(0), {
+            modules: [EffectMaterial],
+            breakpoints: { 768: { slidesPerView: 2 } },
+            effect: "material",
+            spaceBetween: 16,
+        });
+
     }
 
     // Initialize each block on page load (front end).
-    $(document).ready(function(){
-        $('.wp-block-acf-button-block').each(function(){
+    $(document).ready(function(){ 
+        $('.c-swiper').each(function(){
             initializeBlock( $(this) );
         });
-      
     });
 
     // Initialize dynamic block preview (editor).
@@ -37,6 +38,6 @@
         // Stop links from activating in the editor
     }
 
+})(jQuery);
     
 
-})(jQuery);

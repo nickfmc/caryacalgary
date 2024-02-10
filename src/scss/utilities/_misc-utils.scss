@@ -13,6 +13,11 @@
   font-size: 1.625rem;
 }
 
+.u-mobile-pad {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 .u-flex {
   display: flex;
 }
@@ -25,12 +30,20 @@
   text-align: center;
 }
 
+.u-subhead {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: $font-secondary;
+}
 
 // ++ media or embed aspect ratio +++++++++++++++++++++++++++++++++
 .u-aspect-16x9 {
   padding-bottom: 56.25%; /* (9 / 16 = 0.5625) */
 }
 
+.c-blurred-hero {
+  filter: blur(5px);
+}
 
 // ++ float orphan fix trick +++++++++++++++++++++++++++++++++
 .u-orphan-fix {

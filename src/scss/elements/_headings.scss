@@ -3,9 +3,9 @@
    ========================================================================== */
 
 h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .h6-style {
-  color: $color-gray-med;
+  color: $color-black;
   font-family: $font-secondary;
-  font-weight: 400;
+  font-weight: 700;
   line-height: $line-height-tight;
   margin: 0 0 1rem 0;
 }
@@ -14,13 +14,13 @@ h1 a, .h1-style a, h2 a, .h2-style a, h3 a, .h3-style a, h4 a, .h4-style a, h5 a
 }
 
 h1, .h1-style {
-  font-size: clamped(45px, 60px);
+  font-size: clamped(45px, 64px);
 }
 h2, .h2-style {
   font-size: clamped(30px, 40px);
 }
 h3, .h3-style {
-  font-size: clamped(28px, 36px);
+  font-size: clamped(26px, 33px);
 }
 h4, .h4-style {
   font-size: clamped(22px, 30px);

@@ -3162,8 +3162,9 @@ html {
 }
 
 body {
-  color: #000;
-  font-family: "Arial", sans-serif;
+  color: #121314;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
   line-height: 1.5;
   -webkit-overflow-scrolling: touch;
 }
@@ -3177,7 +3178,7 @@ blockquote {
   margin: 2em 0;
   color: #666;
   font-style: italic;
-  border-left: 2px solid #323232;
+  border-left: 2px solid #4d4e4f;
 }
 blockquote::before {
   content: "“";
@@ -3211,9 +3212,9 @@ blockquote::before {
    HEADINGS
    ========================================================================== */
 h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .h6-style {
-  color: #ACACAC;
-  font-family: "Times New Roman", serif;
-  font-weight: 400;
+  color: #121314;
+  font-family: "MuseoSans", sans-serif;
+  font-weight: 700;
   line-height: 1.1;
   margin: 0 0 1rem 0;
 }
@@ -3223,7 +3224,7 @@ h1 a, .h1-style a, h2 a, .h2-style a, h3 a, .h3-style a, h4 a, .h4-style a, h5 a
 }
 
 h1, .h1-style {
-  font-size: clamp(2.81rem, 1.5vw + 2.44rem, 3.75rem);
+  font-size: clamp(2.81rem, 1.9vw + 2.34rem, 4rem);
 }
 
 h2, .h2-style {
@@ -3231,7 +3232,7 @@ h2, .h2-style {
 }
 
 h3, .h3-style {
-  font-size: clamp(1.75rem, 0.8vw + 1.55rem, 2.25rem);
+  font-size: clamp(1.63rem, 0.7vw + 1.45rem, 2.06rem);
 }
 
 h4, .h4-style {
@@ -3264,23 +3265,23 @@ hr, hr.wp-block-separator {
    FORM STYLES
    ========================================================================== */
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #000;
+  color: #121314;
   opacity: 0.8;
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #000;
+  color: #121314;
   opacity: 0.8;
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #000;
+  color: #121314;
   opacity: 0.8;
 }
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  color: #000;
+  color: #121314;
   opacity: 0.8;
 }
 input::placeholder, textarea::placeholder {
-  color: #000;
+  color: #121314;
   opacity: 0.8;
 }
 
@@ -3288,7 +3289,7 @@ input::placeholder, textarea::placeholder {
    A TAG (links) STYLES
    ========================================================================== */
 a {
-  color: #529564;
+  color: #593084;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition: all 250ms ease;
@@ -3296,7 +3297,7 @@ a {
 }
 
 a:hover {
-  color: #323232;
+  color: #4d4e4f;
 }
 
 a, a:active, a:hover, a:visited {
@@ -3314,40 +3315,43 @@ p {
   line-height: 1.5;
   margin: 0 0 1rem 0;
   padding: 0;
+  font-size: clamp(1rem, 0.2vw + 0.95rem, 1.13rem);
 }
 
 /* ==========================================================================
    LINK BUTTON STYLES
    ========================================================================== */
 .c-btn-primary {
-  display: block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   text-align: center;
   margin: 1rem 0 1.75rem 0;
 }
 
 .c-blk-btn a, .c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link {
-  background-color: #ACACAC;
+  background-color: #593084;
   border: none;
   color: #FFF;
   display: inline-block;
   font-weight: 700;
   line-height: 1;
+  border-radius: 30px;
   text-transform: uppercase;
-  padding: 0.75rem 1.25rem;
+  padding: 15px 20px;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
   white-space: nowrap;
 }
 .c-blk-btn a:hover, .c-btn-primary a:hover, .wp-block-button.is-style-standard a.wp-block-button__link:hover, .wp-block-button.is-style-standard .wp-block-button__link:hover {
-  background-color: #EAEAEA;
-  color: #000;
+  background-color: #8364a3;
 }
 
 /* ==========================================================================
    COLOURS
    ========================================================================== */
 .u-bg-grey {
-  background-color: #ACACAC;
+  background-color: #888989;
 }
 
 /* ==========================================================================
@@ -6201,6 +6205,11 @@ p {
   font-size: 1.625rem;
 }
 
+.u-mobile-pad {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 .u-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6215,8 +6224,19 @@ p {
   text-align: center;
 }
 
+.u-subhead {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "MuseoSans", sans-serif;
+}
+
 .u-aspect-16x9 {
   padding-bottom: 56.25%; /* (9 / 16 = 0.5625) */
+}
+
+.c-blurred-hero {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 
 .u-orphan-fix {
@@ -6246,7 +6266,7 @@ p {
 }
 
 .is-style-secondaryfont {
-  font-family: "Times New Roman", serif;
+  font-family: "MuseoSans", sans-serif;
 }
 
 .wp-block, .ugb-inner-block--center {
@@ -6323,12 +6343,4 @@ div:not([class]) > .block-editor-block-list__layout > .wp-block[data-align*=wide
 
 .is-style-narrow-columns .wp-block-column {
   margin-left: 20px;
-}
-
-.wp-block,
-.wp-block[data-type^=toolset]:not([data-align^=full]),
-div:not([class]) > .block-editor-block-list__layout > .wp-block:not([data-align^=full]),
-.tb-container > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block:not([data-align^=full]) {
-  max-width: 920px !important;
-  z-index: 10;
 }
