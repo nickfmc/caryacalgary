@@ -3,7 +3,7 @@
    ========================================================================== */
 
 h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .h6-style {
-  color: $color-black;
+  color: $color-carya-purple;
   font-family: $font-secondary;
   font-weight: 700;
   line-height: $line-height-tight;
@@ -32,5 +32,4 @@ h5, .h5-style {
 }
 h6, .h6-style {
   font-size: clamped(16px, 18px);
-
 }

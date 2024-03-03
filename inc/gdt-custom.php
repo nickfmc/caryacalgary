@@ -32,4 +32,8 @@ function maw_reading_time($atts) {
 }
 add_shortcode('maw_reading_time', 'maw_reading_time');
 
+
+
+
+
 ?>

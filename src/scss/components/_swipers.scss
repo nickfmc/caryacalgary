@@ -8,7 +8,7 @@
 
     height: 100%;
 
-    padding: 16px 16px;
+    padding: 16px 16px 50px 16px;
   }
 
   .swiper-slide {
@@ -60,4 +60,15 @@
     font-size: 48px;
     line-height: 1.5;
     font-weight: bold;
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+    .swiper-pagination-bullet {
+      width: 15px;
+      height: 15px;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: $color-carya-purple;
+    }
   }

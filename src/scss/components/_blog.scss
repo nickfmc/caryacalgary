@@ -3,6 +3,9 @@
     padding: 60px 0 50px 0;
     time {
         color: $color-gray-med;
+        font-weight: 400;
+        display: block;
+        margin-bottom: 9px;
     }
 
 }
@@ -27,4 +30,24 @@
         padding: 50px;
     
     } 
+}
+
+.c-social-share {
+    > span {
+        margin-bottom: 10px;
+        display: block;
+    }
+    a {
+        margin-right: 8px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        background-color: $color-carya-purple;
+        svg {
+            fill: #fff;
+        }
+    }
 }

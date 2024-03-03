@@ -22,3 +22,21 @@
   max-width: $wrapper-width-narrow;
   width: 100%;
 }
+
+.o-purple-grad {
+  background: linear-gradient(180deg, $color-carya-purple 70px, #fff 70px);
+margin-top: -1px;
+}
+
+.o-grey-lower-grad {
+  background: linear-gradient(360deg, rgba(0,0,0,0.1) 70px, #fff 70px);
+}
+
+.o-white-top-grad {
+  background: linear-gradient(180deg, #fff 70px, $color-carya-purple 70px);
+  margin-top: -1px;
+}
+
+.c-half-grey {
+  background: linear-gradient(360deg, #fff 50%, rgba(0,0,0,0.05) 50%);
+}

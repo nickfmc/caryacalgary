@@ -52,6 +52,7 @@ jQuery( document ).ready(function( $ ) {
     levelTitleAsBack: true
   });
 
+
   // modal menu init ----------------------------------
   // var modal_menu = jQuery("#c-modal-nav-button").animatedModal({
   //   modalTarget: 'modal-navigation',

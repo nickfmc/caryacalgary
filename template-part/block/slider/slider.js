@@ -18,10 +18,13 @@
 
         var swiper = new Swiper($block.find(".swiper").get(0), {
             modules: [EffectMaterial],
-            breakpoints: { 768: { slidesPerView: 2 } },
+            breakpoints: {
+              768: { slidesPerView: 2 },
+            },
             effect: "material",
+            pagination: { el: ".swiper-pagination", enabled: true, clickable: true },
             spaceBetween: 16,
-        });
+            });
 
     }
 
@@ -39,5 +42,3 @@
     }
 
 })(jQuery);
-    
-
