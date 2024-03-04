@@ -38,7 +38,7 @@ function gdt_program_reg() {
     'query_var'            => true,
     'menu_position'        => 21,
     'menu_icon'            => 'dashicons-welcome-learn-more',
-    'rewrite'              => array( 'slug' => 'projects', 'with_front' => false ),
+    'rewrite'              => array( 'slug' => 'program', 'with_front' => false ),
     'capability_type'      => 'post',
     'has_archive'          => false, // true or use custom slug: 'custom_type_url/past' */
     'hierarchical'         => false,

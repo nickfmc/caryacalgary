@@ -1,40 +1,121 @@
 /* ==========================================================================
    FOOTER
    ========================================================================== */
+.c-pre-footer {
+  background-color: $color-carya-purple;
+
+  color: #fff;
+  padding: 60px 25px 90px 25px;
+
+  position: relative;
+  overflow: hidden;
+  @media(width >= $bp-medium) {
+    padding: 60px 25px;
+  } 
+  svg {
+    position: absolute;
+    top: -190px;
+    left: -69px;
+    width: 608px;
+    height: 1000px;
+    z-index: 0;
+    @media(width >= $bp-medium) {
+      top: -285px;
+      left: -283px;
+      width: 608px;
+    } 
+    @media(width >= 1016px) {
+      width: 800px;
+      top: -378px;
+    
+    } 
+    @media(width >= 1250px) {
+      width: 935px;
+    
+    } 
+    @media(width >= 1670px) {
+      width: 1135px;
+    } 
+
+  }
+}
+
+.c-pre-footer-inner {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  position: relative;
+  @media(width >= $bp-medium) {
+    flex-direction: row;
+
+  } 
+  > div {
+    width: 100%;
+    @media(width >= $bp-medium) {
+      width: 50%;
+    
+    } 
+  }
+  p {
+    font-size: clamped(19px, 25px);
+  }
+  h2 {
+    color: #fff;
+  }
+}
 
 .c-page-footer {
-  background-color: $color-gray-dark;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 100px;
-  padding-bottom: 20px;
+  overflow: hidden;
+  background-color: #fff;
+border-top: 1px solid $color-carya-purple;
+ 
+
+  
   color: #fff;
   ul {
     display: flex;
     gap: 10px;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    padding-left: 40px;
+    flex-direction: column;
     li {
       a {
-        color: #fff;
+        color: $color-carya-purple;
+        font-size: 20px;
+        font-weight: 700;
       }
     }
+  }
+  .o-wrapper-wide {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }
 
 .c-footer-logo {
   display: flex;
-  width: 184px;
-  padding: 0 40px;
   justify-content: center;
-  a {
-    width: 144px;
+  flex-direction: column;
+  align-items: center;
+  @media(width >= $bp-large) {
+  align-items: flex-start;
   } 
+  > a {
+    width: 140px;
+    
+  }
 }
   .c-page-footer-top {
   display: flex;
   justify-content: space-between;
   padding-bottom: 50px;
+  padding-top: 100px;
+  gap: 50px;
+  flex-direction: column;
+  @media(width >= $bp-large) {
+  flex-direction: row;
+
+  } 
+ 
 > ul {
     flex:1;
 
@@ -42,26 +123,40 @@
 }
 
 .c-page-footer-lower {
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.4);
+  font-size: 14px;
+  background-color: #000;
+  color: #fff;
   padding-top: 25px;
   font-size: 15px;
+  position: relative;
+  z-index: 5;
+  p {
+  font-size: 14px;
+
+  }
 }
 
+
 .c-footer-socials {
-  margin-bottom: 90px;
+  margin-bottom: 30px;
   margin-top: 25px;
+  display: flex;
+  @media(width >= $bp-large) {
+    margin-bottom: 90px;
+  
+  } 
   a {
     color: #fff;
+    background-color: $color-carya-purple;
     font-size: 20px;
-    margin-right: 10px;
-    border: 1px solid #fff;
-    width: 50px;
-    display: inline-flex;
+    margin-right: 4px;
+    border: 1px solid $color-carya-purple;
+    width: 30px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    height: 50px;
+    border-radius: 10px;
+    height: 30px;
     svg {
       fill: #fff;
     }
@@ -72,4 +167,62 @@
       }
     }
   }
+}
+
+.c-page-footer-lower-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  @media(width >= $bp-large) {
+  flex-direction: row;
+  } 
+}
+
+.c-page-footer-last-col {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #f3f3f3;
+  position: relative;
+
+  @media(width >= $bp-large) {
+  margin-left: 0;
+  width: 400px;
+  padding: 0;
+
+  &::before {
+    top: -100px;
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2000px;
+    height: 1000px;
+    background-color: #f3f3f3;
+    z-index: 0;
+   
+  }
+  } 
+
+  
+}
+
+.c-page-footer-last-col-inner {
+  z-index: 10;
+  position: relative;
+  padding-left: 0;
+  text-align: center;
+  padding: 0 25px;
+  @media(width >= $bp-large) {
+    padding-left: 70px;
+    text-align: left;
+  
+  } 
+}
+
+.c-footer-menu {
+  text-align: center;
+  padding-left: 0 !important;
+  @media(width >= $bp-large) {
+  text-align: left;
+  padding-left: inherit !important;
+  } 
 }

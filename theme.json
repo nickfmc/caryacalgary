@@ -59,7 +59,12 @@
 					"name": "Carya Blue"
 				},
 				{
-					"slug": "yeloow",
+					"slug": "blue-fade",
+					"color": "#e8f4fb",
+					"name": "Carya Blue Faded"
+				},
+				{
+					"slug": "yellow",
 					"color": "#e4a726",
 					"name": "Carya Yellow"
 				}

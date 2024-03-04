@@ -68,7 +68,7 @@ function gdt_content_excerpt( $charLimit )
     } else {
       $excerptString = $subex;
     }
-    $excerptString .= "[...]";
+    $excerptString .= "...";
   } else {
     $excerptString = $excerpt;
   }

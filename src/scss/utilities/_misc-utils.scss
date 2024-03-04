@@ -51,6 +51,19 @@
   width: auto;
 }
 
+.u-more-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  color: $color-carya-purple;
+  text-decoration: none;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 
 // ++ visibility classes ++++++++++++++++++++++++++++++++++++
 .u-visually-hidden {
