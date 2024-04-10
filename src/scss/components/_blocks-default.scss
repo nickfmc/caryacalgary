@@ -96,21 +96,47 @@ $paddingHorizontal: 25px;
 
 // ++ table block ++++++++++++++++++++++++++++
 .wp-block-table {
-  border: 2px solid $color-gray-med;
+  margin-top: 30px;
+  padding: 2px;
   & th {
-    text-align: center;
+    text-align: left;
   }
   & th, & td {
-    border: 2px solid $color-gray-med;
-    padding: 10px;
-    color: $color-gray-dark;
+    border: none;
+    padding: 20px;
     line-height: 1.2;
   }
   & tr:first-of-type {
-    text-align: center;
+    text-align: left;
+    border-top: 1px solid #333;
+  }
+  & tr {
+    border-top: 1px solid #333;
     & td {
-        padding: 30px 10px;
-    }  
+      border: 1px solid #333;
+    }
+  }
+  thead {
+    border-bottom: 1px solid #333 !important;
+    tr {
+      th {
+        font-size: 18px;
+        border: 1px solid #333; 
+      }
+    }
+  } 
+  &.is-style-stripes {
+    & tr {
+      border-top: none;
+    }
+    thead {
+      tr {
+        border: none;
+        th {
+          border: none;
+        }
+      }
+    }
   }
 }
 

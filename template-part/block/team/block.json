@@ -1,0 +1,16 @@
+{
+    "name": "acf/team-block",
+    "title": "Team Members",
+    "description": "Team Member grid",
+    "icon": "button",
+    "keywords": ["button"],
+    "category": "myblocks",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "team.php" 
+    },
+    "example": {
+        "attributes": {}
+    },
+    "align": "full"
+}

@@ -69,6 +69,8 @@ function maw_register_guten_script() {
 function register_acf_blocks() { 
   register_block_type(  get_stylesheet_directory() . '/template-part/block/gallery/block.json' );
   register_block_type(  get_stylesheet_directory() . '/template-part/block/slider/block.json' );
+  register_block_type(  get_stylesheet_directory() . '/template-part/block/team/block.json' );
+  register_block_type(  get_stylesheet_directory() . '/template-part/block/calendar/block.json' );
 
 }
 

@@ -1,13 +1,16 @@
 .c-project-banner {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     @media(width >= $bp-large) {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 90px;
+        padding-bottom: 90px;
     } 
     @media(width >= 1200px) {
-        padding-top: 120px;
-        padding-bottom: 120px;
+        padding-top: 150px;
+        padding-bottom: 150px;
     } 
     position: relative;
     padding-right: 25px;
@@ -65,13 +68,63 @@
 .c-card--project {
     box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.25);
    border-radius: 10px;
+   height: 100%;
+   display: flex;
+    flex-direction: column;
+    position: relative;
  h2 {
     color: #000;
     font-weight: 400;
     font-size: 20px;
+    margin-top: 20px;
+
+}
+.term {
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+font-style: normal;
+font-weight: 800;
+line-height: 140.625%; /* 16.875px */
+letter-spacing: 1.44px;
+text-transform: uppercase;
+color: $color-carya-purple;
+font-weight: 400;
 }
 }
 
 .c-card--project--inner {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.c-card--project-header {
+    display: flex;
+    background-color: $color-carya-orange;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    opacity: 0.4;
+    svg {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    
+    }
+  
+}
+
+.c-card--project:hover {
+    transform: scale(1.03);
+    .c-card--project-header {
+        opacity: 1;
+    }
+}
+
+.c-single-pillar-query {
+    .c-card--project-header {
+        background-color: $color-carya-yellow;
+    }
 }

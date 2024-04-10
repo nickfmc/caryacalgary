@@ -1,3 +1,7 @@
+<?php
+    if( get_field('show_pre_footer') ) { ?>
+
+
 <div class="c-pre-footer">
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.01 223.97">
   <defs>
@@ -57,6 +61,10 @@
     </div>
   </div>
 </div>  
+
+<?php
+    }
+?>
 
   <footer class="o-section c-page-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
     <div class="o-wrapper-wide">

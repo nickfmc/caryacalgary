@@ -1,0 +1,16 @@
+{
+    "name": "acf/calendar-block",
+    "title": "Calendar Block",
+    "description": "A block that displays a calendar",
+    "icon": "dashicons-calendar",
+    "keywords": ["button"],
+    "category": "myblocks",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "calendar.php" 
+    },
+    "example": {
+        "attributes": {}
+    },
+    "align": "full"
+}
