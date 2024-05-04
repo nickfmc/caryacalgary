@@ -40,6 +40,41 @@ function gdt_pillar_reg() {
 }
 
 
+
+// register ###REPLACE_ME### custom taxonomy
+add_action( 'init', 'gdt_pillarbreak_reg', 0 );
+
+// create taxonomy, for the post type(s) you connect it to below
+function gdt_pillarbreak_reg() {
+  // Add new taxonomy, make it hierarchical (like categories)
+  $singular = 'Pillar Breakdown';
+  $plural = 'Pillars Breakdown';
+  $labels = array(
+    'name'              => "$plural",
+    'singular_name'     => "$singular",
+    'search_items'      => "$plural",
+    'all_items'         => "$plural",
+    'parent_item'       => "Parent $singular",
+    'parent_item_colon' => "Parent $singular",
+    'edit_item'         => "Edit $singular",
+    'update_item'       => "Update $singular",
+    'add_new_item'      => "Add New $singular",
+    'new_item_name'     => "New $singular Name",
+    'menu_name'         => "$plural"
+  );
+  $args = array(
+    'public'            => false,
+    'show_in_rest'      => true,
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => false  /* true or use custom slug => array( 'slug' => 'custom-tag-slug', 'with_front' => false  ) */
+  );
+  register_taxonomy( 'breakdown_tax', array( 'project_type' ), $args );
+}
+
 // register ###REPLACE_ME### custom taxonomy
  add_action( 'init', 'gdt_membertype_reg', 0 );
 

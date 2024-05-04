@@ -292,9 +292,13 @@
         flex-direction: column;
         @media(width >= $bp-medium) {
             flex-direction: row;
+            flex-wrap: wrap;
         } 
         div {
             flex: 1 1 auto;
+            @media(width >= $bp-medium) {
+            flex-basis: 25%;
+            } 
         }
     }
 
@@ -334,7 +338,7 @@
 
         .c-location-item {
             padding: 20px;
-            &:first-of-type {
+            &:nth-of-type(5n) {
                 border-radius: 0 0 0 15px;
             }
             &:last-of-type {

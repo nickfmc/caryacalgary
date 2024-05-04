@@ -143,7 +143,7 @@ $paddingHorizontal: 25px;
 
 
 // ++ ul list block (with custom class added) +++++++++++++++++++++++++++++++++
-.editor-content ul {
+.editor-content ul:not([class^="wpforms-"]) {
   list-style-type: none;
   margin: 1rem 0 1rem 20px;
   padding: 0;
@@ -152,15 +152,15 @@ $paddingHorizontal: 25px;
   margin-left: 30px;
   } 
 }
-.editor-content ul li {
+.editor-content ul:not([class^="wpforms-"]) li {
   margin: 0;
   padding: 0 0 10px 12px;
   position: relative;
   font-size: clamped(16px, 18px);
 }
-.editor-content ul li::before {
+.editor-content ul:not([class^="wpforms"]) li::before {
   display: block; 
-  background-color: #333;
+  background-color: currentColor;
   content: "";
 	position: absolute;
   width: 6px;
@@ -168,6 +168,23 @@ $paddingHorizontal: 25px;
   border-radius: 50%;
   top: 0.58em;
   left: 0;
+}
+
+.wpforms-field li::before {
+  display: none !important;
+}
+
+.wpforms-field li {
+  padding-left: 0 !important;
+}
+
+.wpforms-field ul  {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  margin-left: 0 !important;
+  li {
+    display: block !important;
+  }
 }
 
 .editor-content  .stk-block-icon-list  ul {

@@ -88,8 +88,6 @@ return $output;
 
 add_shortcode('maw_custom_social', 'maw_social_shortcode');
 
-
-
 function maw_custom_shortcode($atts) {
   // Get the post ID
   $post_id = get_the_ID();
@@ -97,8 +95,16 @@ function maw_custom_shortcode($atts) {
   // Get the post title
   $title = get_the_title($post_id);
 
+  
+
   // Get the post excerpt
-  $excerpt = gdt_content_excerpt(90);
+  if(has_excerpt()) {
+    $excerpt = get_the_excerpt();
+  } else {
+    $excerpt = gdt_content_excerpt(90);
+  }
+  
+
 
   // Get the post URL
   $link = get_permalink($post_id);
@@ -134,8 +140,12 @@ function maw_project_shortcode($atts) {
   // Get the post title
   $title = get_the_title($post_id);
 
-  // Get the post excerpt
-  $excerpt = gdt_content_excerpt(120);
+   // Get the post excerpt
+   if(has_excerpt()) {
+    $excerpt = get_the_excerpt();
+  } else {
+    $excerpt = gdt_content_excerpt(120);
+  }
 
   // Get the post URL
   $link = get_permalink($post_id);

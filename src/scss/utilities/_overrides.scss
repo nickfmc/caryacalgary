@@ -58,3 +58,43 @@ border-bottom-color: $color-carya-purple !important;
 //       box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
 //    }
 // }
+
+.wpforms-field-radio {
+   ul {
+      display: flex !important;
+   }
+}
+
+.swiper-button-next, .swiper-button-prev {
+   color: #fff;
+   background: $color-carya-purple;
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+   line-height: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 10;
+   transition: all 0.3s;
+   opacity: 0.8;
+   &:hover {
+      opacity: 1;
+   }
+
+}
+
+.swiper-button-next {
+   right: 20px;
+}
+
+.swiper-button-prev {
+   left: 20px;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+   font-size: 20px;
+}

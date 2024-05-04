@@ -23,6 +23,10 @@
             },
             effect: "material",
             pagination: { el: ".swiper-pagination", enabled: true, clickable: true },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
             spaceBetween: 16,
             });
 

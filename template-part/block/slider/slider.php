@@ -36,7 +36,8 @@ if( $is_preview ) {
 <div class="swiper" style="<?php if( get_field('slider_hieght_in_pixels') ) { echo 'height:' . get_field('slider_hieght_in_pixels') . 'px;'; }?>">
   <!-- Add pagination container -->
   <div class="swiper-pagination"></div> 
-  
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
   <div class="swiper-wrapper">
     <?php if( have_rows('slides') ): ?>
       <?php while( have_rows('slides') ): the_row(); ?>

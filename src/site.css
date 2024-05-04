@@ -3672,7 +3672,7 @@ blockquote::before {
   position: absolute;
   top: -31px;
   left: -15px;
-  color: #2c3e50;
+  color: #fff;
   font-size: 90px;
   display: inline-block;
   width: 1em;
@@ -3685,10 +3685,12 @@ blockquote::before {
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
-  opacity: 0.1;
+  opacity: 0.3;
 }
 blockquote p {
   margin: 0;
+  z-index: 2;
+  position: relative;
 }
 blockquote cite {
   display: block;
@@ -4227,28 +4229,28 @@ p {
   border: none;
 }
 
-.editor-content ul {
+.editor-content ul:not([class^=wpforms-]) {
   list-style-type: none;
   margin: 1rem 0 1rem 20px;
   padding: 0;
   overflow: hidden;
 }
 @media (width >= 992px) {
-  .editor-content ul {
+  .editor-content ul:not([class^=wpforms-]) {
     margin-left: 30px;
   }
 }
 
-.editor-content ul li {
+.editor-content ul:not([class^=wpforms-]) li {
   margin: 0;
   padding: 0 0 10px 12px;
   position: relative;
   font-size: clamp(1rem, 0.2vw + 0.95rem, 1.13rem);
 }
 
-.editor-content ul li::before {
+.editor-content ul:not([class^=wpforms]) li::before {
   display: block;
-  background-color: #333;
+  background-color: currentColor;
   content: "";
   position: absolute;
   width: 6px;
@@ -4256,6 +4258,28 @@ p {
   border-radius: 50%;
   top: 0.58em;
   left: 0;
+}
+
+.wpforms-field li::before {
+  display: none !important;
+}
+
+.wpforms-field li {
+  padding-left: 0 !important;
+}
+
+.wpforms-field ul {
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+  margin-left: 0 !important;
+}
+.wpforms-field ul li {
+  display: block !important;
 }
 
 .editor-content .stk-block-icon-list ul {
@@ -4755,7 +4779,7 @@ p {
 
 .c-page-footer-lower {
   font-size: 14px;
-  background-color: #000;
+  background-color: #333;
   color: #f3f3f3;
   padding-top: 25px;
   font-size: 15px;
@@ -4864,6 +4888,20 @@ p {
     text-align: left;
     padding-left: inherit !important;
   }
+}
+
+.c-page-footer-bottom {
+  background-color: #000;
+  padding: 5px 25px;
+  font-size: 14px;
+}
+.c-page-footer-bottom a {
+  color: #fff;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.c-page-footer-bottom a:hover {
+  color: #fff;
 }
 
 .single .c-article-header {
@@ -5619,12 +5657,20 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 .c-location-items div {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+@media (width >= 768px) {
+  .c-location-items div {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+  }
 }
 
 .c-calendar-event-alert {
@@ -5663,7 +5709,7 @@ p {
 .c-calendar-locations .c-location-item {
   padding: 20px;
 }
-.c-calendar-locations .c-location-item:first-of-type {
+.c-calendar-locations .c-location-item:nth-of-type(5n) {
   border-radius: 0 0 0 15px;
 }
 .c-calendar-locations .c-location-item:last-of-type {
@@ -5815,16 +5861,16 @@ p {
     color: #222222;
   }
   .c-main-menu > .current-menu-item > a,
-.c-main-menu > .current-page-ancestor > a,
-.c-main-menu > .current_page_item > a,
-.c-main-menu > .current_page_parent > a,
-.c-main-menu > .current_page_ancestor > a {
+  .c-main-menu > .current-page-ancestor > a,
+  .c-main-menu > .current_page_item > a,
+  .c-main-menu > .current_page_parent > a,
+  .c-main-menu > .current_page_ancestor > a {
     color: #222222;
   }
 }
 @media (width >= 992px) {
   .c-main-menu li:hover ul,
-.c-main-menu li.focus ul {
+  .c-main-menu li.focus ul {
     top: 100%;
     opacity: 1;
     visibility: visible;
@@ -5851,7 +5897,7 @@ p {
     overflow: hidden;
   }
   .c-main-menu li:hover ul li,
-.c-main-menu li.focus ul li {
+  .c-main-menu li.focus ul li {
     max-height: 140px;
   }
   .c-main-menu ul li a {
@@ -5864,11 +5910,11 @@ p {
     transition: all 250ms ease;
   }
   .c-main-menu ul li a:hover,
-.c-main-menu ul .current-menu-item > a,
-.c-main-menu ul .current-menu-parent > a,
-.c-main-menu ul .current_page_item > a,
-.c-main-menu ul .current_page_parent > a,
-.c-main-menu ul .current_page_ancestor > a {
+  .c-main-menu ul .current-menu-item > a,
+  .c-main-menu ul .current-menu-parent > a,
+  .c-main-menu ul .current_page_item > a,
+  .c-main-menu ul .current_page_parent > a,
+  .c-main-menu ul .current_page_ancestor > a {
     color: #000000;
   }
 }
@@ -7218,6 +7264,53 @@ select.piotnetgrid-facet-field {
   border-top-color: #593084 !important;
 }
 
+.wpforms-field-radio ul {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+  background: #593084;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 10;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0.8;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  opacity: 1;
+}
+
+.swiper-button-next {
+  right: 20px;
+}
+
+.swiper-button-prev {
+  left: 20px;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 20px;
+}
+
 /* ==========================================================================
    PRINT STYLES
    ========================================================================== */
@@ -7231,8 +7324,8 @@ select.piotnetgrid-facet-field {
    * 1. Black prints faster: http://www.sanbeiji.com/archives/953
    */
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     background: transparent !important;
     color: #000 !important;
     /* [1] */
@@ -7241,7 +7334,7 @@ select.piotnetgrid-facet-field {
     text-shadow: none !important;
   }
   a,
-a:visited {
+  a:visited {
     text-decoration: underline;
   }
   a[href]::after {
@@ -7255,11 +7348,11 @@ a:visited {
    * pseudo protocol.
    */
   a[href^="#"]::after,
-a[href^="javascript:"]::after {
+  a[href^="javascript:"]::after {
     content: "";
   }
   pre,
-blockquote {
+  blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
@@ -7270,20 +7363,20 @@ blockquote {
     display: table-header-group;
   }
   tr,
-img {
+  img {
     page-break-inside: avoid;
   }
   img {
     max-width: 100% !important;
   }
   p,
-h2,
-h3 {
+  h2,
+  h3 {
     orphans: 3;
     widows: 3;
   }
   h2,
-h3 {
+  h3 {
     page-break-after: avoid;
   }
 }

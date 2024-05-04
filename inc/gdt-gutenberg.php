@@ -57,7 +57,7 @@ add_filter( 'block_categories_all', 'custom_block_category', 10, 2 );
 
 // Register Block Scripts
 function maw_register_guten_script() { 
-  $version = '1.0.0'; // Define the version number
+  $version = '1.0.1'; // Define the version number
   wp_register_script( 'swiper', get_template_directory_uri() .'/dist/swiper-bundle.min.js');  
   wp_register_script( 'effects', get_template_directory_uri() .'/template-part/block/slider/effect-material.min.js');
   wp_register_script( 'slider', get_template_directory_uri() .'/template-part/block/slider/slider.js', [ 'swiper' ,'effects' , 'acf' ], $version);

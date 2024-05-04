@@ -15,7 +15,7 @@
       position: absolute;
       top: -31px;
       left: -15px;
-      color: #2c3e50;
+      color: #fff;
       font-size: 90px;
         display: inline-block;
         width: 1em;
@@ -28,12 +28,14 @@
         mask-repeat: no-repeat;
         -webkit-mask-size: 100% 100%;
         mask-size: 100% 100%;
-        opacity: 0.1;
+        opacity: 0.3;
       }
     
   
     & p {
       margin: 0;
+      z-index: 2;
+      position: relative;
     }
   
     & cite {

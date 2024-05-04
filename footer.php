@@ -86,9 +86,9 @@
     <?php gdt_nav_menu( 'footertwo-menu', 'c-footer-menu' ); // Adjust using Menus in WordPress Admin ?>
     <div class="c-page-footer-last-col">
     <div class="c-page-footer-last-col-inner">
-      <h5>Looking for Additional Assistance?</h5>
+      <h5>Subscribe to our newsletter.</h5>
       <div class="c-btn-primary">
-        <a href="/contact">Contact Us</a>
+        <a target="_blank" href="https://visitor.r20.constantcontact.com/manage/optin?v=001DFTCDgfTjajtMzyiMyEheyitYSG3x-bMtYQqQTMVJ4AP6bRCRDkb9v1mlML3y2zTnXSJk3rSFPECtyWMZJqrzQh3T4tDNYwbBjFF7eqbX8laoAojL_02VnnTKNwf97lPb2-TWZkWyQ_tRqG9vi1cuu0pkDSULTgO">Subscribe</a>
       </div>
     </div>
     </div>
@@ -101,12 +101,18 @@
     <div class="c-page-footer-lower">
     <div class="o-wrapper-wide">
       <div class="c-page-footer-lower-inner">
-      <p>carya is located on Treaty 7 territory, traditional home of Kainai, Piikani, Siksika, Tsuut'ina, Stoney-Nakoda Nations and Métis Nation, Region 3.</p>
-      <span> &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</span>
+      <p>Carya engages Calgarians on the traditional unceded territory the Blackfoot named Moh'kinstis, where the Bow and Elbow rivers flow as one. We acknowledge the authentic history and oral traditions of the people of Treaty 7 - the Siksika, Piikani, and Kainai, the Tsuut'ina, the Îyâxe Nakoda Nations, and the Northwest Metis and Otipemisiwak Districts 5 and 6 - in the spirit of respect, reciprocity, and reconciliation. Carya works to strengthen individuals, families, and communities to live together as our rivers do, in confluence, and we honour all peoples who share this sacred place.</p>
+      
       </div>
     </div>
-    
-   
+    </div>
+
+    <div class="c-page-footer-bottom">
+    <div class="o-wrapper-wide">
+      <div class="c-page-footer-bottom-inner">
+      <span> &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</span> | <a href="/privacy-policy">Privacy Policy</a> | <a href="/conflict-resolution/">Conflict Resolution</a>    
+      </div>
+    </div>
     </div>
   </footer>
   <!-- /.c-page-footer -->
