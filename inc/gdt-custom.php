@@ -34,6 +34,25 @@ add_shortcode('maw_reading_time', 'maw_reading_time');
 
 
 
+add_action('rest_api_init', function () {
+  register_rest_field('user', 'name', array(
+    'get_callback' => function() { return null; },
+    'update_callback' => null,
+    'schema' => null,
+  ));
+
+  register_rest_field('user', 'slug', array(
+    'get_callback' => function() { return null; },
+    'update_callback' => null,
+    'schema' => null,
+  ));
+
+  register_rest_field('user', 'link', array(
+    'get_callback' => function() { return null; },
+    'update_callback' => null,
+    'schema' => null,
+  ));
+});
 
 
 
