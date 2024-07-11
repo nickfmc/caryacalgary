@@ -34,9 +34,9 @@ if( $is_preview ) {
 
  <div class="c-calendar-grid">
    <div class="c-calendar-day">
-      
+   <div class="c-calendar-day-title">Monday</div>
       <?php if( have_rows('mondays') ): ?>
-        <div class="c-calendar-day-title">Monday</div>
+        
        <?php while( have_rows('mondays') ): the_row(); ?>
        <div <?php 
         if( get_sub_field('program_description') ) { 
