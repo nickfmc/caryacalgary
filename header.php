@@ -19,6 +19,17 @@
   <?php wp_head(); // wordpress head functions -- DONOTREMOVE ?>
 
   <?php // START Google Analytics here ?>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EW53ETB3E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1EW53ETB3E');
+</script>
+
   <?php // END Analytics ?>
 </head>
 
