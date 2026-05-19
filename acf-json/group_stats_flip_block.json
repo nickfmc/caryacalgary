@@ -1,0 +1,105 @@
+{
+    "key": "group_stats_flip_block",
+    "title": "Stats & Quotes Flip Block",
+    "fields": [
+        {
+            "key": "field_stats_flip_section_title",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "Optional section title",
+            "required": 0
+        },
+        {
+            "key": "field_stats_flip_section_description",
+            "label": "Section Description",
+            "name": "section_description",
+            "type": "textarea",
+            "instructions": "Optional description or subtitle",
+            "required": 0,
+            "rows": 3
+        },
+        {
+            "key": "field_stats_flip_items",
+            "label": "Stat Items",
+            "name": "stat_items",
+            "type": "repeater",
+            "instructions": "Add statistics with quotes",
+            "required": 1,
+            "layout": "block",
+            "button_label": "Add Stat",
+            "sub_fields": [
+                {
+                    "key": "field_stats_flip_stat_number",
+                    "label": "Stat Number",
+                    "name": "stat_number",
+                    "type": "text",
+                    "instructions": "e.g., 2,385 or 100%",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_stats_flip_stat_label",
+                    "label": "Stat Label",
+                    "name": "stat_label",
+                    "type": "text",
+                    "instructions": "Brief label for the stat",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_stats_flip_stat_description",
+                    "label": "Stat Description",
+                    "name": "stat_description",
+                    "type": "textarea",
+                    "instructions": "Additional context for the statistic",
+                    "required": 0,
+                    "rows": 3
+                },
+                {
+                    "key": "field_stats_flip_quote_text",
+                    "label": "Quote Text",
+                    "name": "quote_text",
+                    "type": "textarea",
+                    "instructions": "Quote to display on card flip",
+                    "required": 0,
+                    "rows": 4
+                },
+                {
+                    "key": "field_stats_flip_quote_author",
+                    "label": "Quote Author",
+                    "name": "quote_author",
+                    "type": "text",
+                    "instructions": "Optional attribution",
+                    "required": 0
+                },
+                {
+                    "key": "field_stats_flip_background_color",
+                    "label": "Background Color",
+                    "name": "background_color",
+                    "type": "color_picker",
+                    "instructions": "Optional custom background color",
+                    "required": 0,
+                    "default_value": "#593084"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/stats-flip-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "active": true
+}

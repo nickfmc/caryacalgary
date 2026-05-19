@@ -1,0 +1,178 @@
+/* ==========================================================================
+   STATS FLIP BLOCK
+   ========================================================================== */
+
+.c-stats-flip {
+    padding: 60px 20px;
+    
+    @media (min-width: $bp-medium) {
+        padding: 80px 40px;
+    }
+    
+    @media (min-width: $bp-large) {
+        padding: 100px 60px;
+    }
+}
+
+.c-stats-flip__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    
+    h2 {
+        color: $color-carya-purple;
+        margin-bottom: 20px;
+    }
+}
+
+.c-stats-flip__description {
+    font-size: 1.125rem;
+    color: $color-gray-dark;
+    line-height: 1.6;
+}
+
+.c-stats-flip__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    @media (min-width: $bp-medium) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    @media (min-width: $bp-large) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.c-stats-flip__card {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.c-stats-flip__card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    
+    .c-stats-flip__card:hover &,
+    .c-stats-flip__card:focus & {
+        transform: rotateY(180deg);
+    }
+}
+
+.c-stats-flip__card-front,
+.c-stats-flip__card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    
+    @media (min-width: $bp-medium) {
+        padding: 50px 40px;
+    }
+}
+
+.c-stats-flip__card-front {
+    background-color: $color-carya-purple;
+    color: $color-white;
+}
+
+.c-stats-flip__card-back {
+    background-color: $color-carya-purple-light;
+    color: $color-white;
+    transform: rotateY(180deg);
+}
+
+.c-stats-flip__stat-number {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 20px;
+    color: $color-white;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 5rem;
+    }
+    
+    @media (min-width: $bp-large) {
+        font-size: 6rem;
+    }
+}
+
+.c-stats-flip__stat-label {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 1.75rem;
+    }
+}
+
+.c-stats-flip__stat-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.95;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 1.125rem;
+    }
+}
+
+.c-stats-flip__quote {
+    position: relative;
+}
+
+.c-stats-flip__quote-icon {
+    font-size: 6rem;
+    font-family: Georgia, serif;
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 10px;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 7rem;
+    }
+}
+
+.c-stats-flip__quote-text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 1.25rem;
+    }
+}
+
+.c-stats-flip__quote-author {
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: normal;
+    opacity: 0.9;
+}
+
+// Admin preview adjustments
+.is-admin {
+    .c-stats-flip__card:hover .c-stats-flip__card-inner {
+        transform: rotateY(180deg);
+    }
+}

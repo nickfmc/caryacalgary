@@ -1,0 +1,236 @@
+/* ==========================================================================
+   SERVICE PILLARS BLOCK
+   ========================================================================== */
+
+.c-service-pillars {
+    padding: 60px 20px;
+    background-color: $color-white;
+    
+    @media (min-width: $bp-medium) {
+        padding: 80px 40px;
+    }
+    
+    @media (min-width: $bp-large) {
+        padding: 100px 60px;
+    }
+}
+
+.c-service-pillars__header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    
+    h2 {
+        color: $color-carya-purple;
+        margin-bottom: 25px;
+    }
+}
+
+.c-service-pillars__intro {
+    font-size: 1.125rem;
+    color: $color-gray-dark;
+    line-height: 1.7;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 1.25rem;
+    }
+}
+
+.c-service-pillars-swiper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 80px;
+    position: relative;
+    overflow: hidden;
+    
+    @media (min-width: $bp-medium) {
+        padding: 20px 0 100px;
+    }
+    
+    .swiper-wrapper {
+        align-items: center;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: $color-carya-purple;
+        background: rgba(255, 255, 255, 0.7);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        top: auto;
+        bottom: -2px;
+        margin-top: 0;
+        
+        &:after {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        &:hover {
+            background: rgba(89, 48, 132, 0.9);
+            color: $color-white;
+        }
+    }
+    
+    .swiper-button-prev {
+        left: calc(50% - 100px);
+    }
+    
+    .swiper-button-next {
+        right: calc(50% - 100px);
+    }
+    
+    .swiper-pagination {
+        bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .swiper-pagination-bullet {
+            width: 14px;
+            height: 14px;
+            background: $color-gray-light;
+            opacity: 1;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+            
+            &-active {
+                background: $color-carya-purple;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.c-service-pillars__slide-content {
+    background-color: $color-carya-purple;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.c-service-pillars__main-content {
+    @media (min-width: $bp-large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 500px;
+    }
+}
+
+.c-service-pillars__image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    
+    @media (min-width: $bp-medium) {
+        height: 400px;
+    }
+    
+    @media (min-width: $bp-large) {
+        height: auto;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.c-service-pillars__text {
+    padding: 40px 30px;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media (min-width: $bp-medium) {
+        padding: 50px 40px;
+    }
+    
+    @media (min-width: $bp-large) {
+        padding: 60px 50px;
+    }
+}
+
+.c-service-pillars__title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: $color-white;
+    font-weight: 700;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 2.5rem;
+    }
+}
+
+.c-service-pillars__content {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 1.125rem;
+    }
+    
+    p {
+        margin-bottom: 15px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.c-service-pillars__quote-banner {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top: 4px solid $color-carya-orange;
+    padding: 30px 40px;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    
+    @media (min-width: $bp-medium) {
+        padding: 35px 50px;
+    }
+}
+
+.c-service-pillars__quote-text {
+    font-size: 1.0625rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin: 0;
+    color: $color-white;
+    
+    @media (min-width: $bp-medium) {
+        font-size: 1.125rem;
+    }
+    
+    &:before,
+    &:after {
+        content: none;
+    }
+}
+
+.c-service-pillars__quote-author {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 600;
+    color: $color-white;
+    opacity: 0.95;
+}
+
+// Swiper customizations for this block
+.c-service-pillars {
+    .swiper-slide {
+        height: auto;
+    }
+}

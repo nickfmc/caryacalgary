@@ -1,0 +1,17 @@
+{
+    "name": "acf/service-pillars-block",
+    "title": "Service Pillars Carousel",
+    "description": "Carousel showcasing service pillars with images and quotes",
+    "icon": "slides",
+    "script": [ "swiper", "service-pillars-slider" ],
+    "keywords": ["carousel", "pillars", "services", "slider"],
+    "category": "myblocks",
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "service-pillars.php"
+    },
+    "example": {
+        "attributes": {}
+    },
+    "align": "full"
+}

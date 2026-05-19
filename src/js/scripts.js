@@ -188,3 +188,218 @@ jQuery( document ).ready(function( $ ) {
 
 });
 // *********************** END CUSTOM JQUERY DOC READY SCRIPTS *********************************
+
+
+// *********************** ANCHOR SECTION NAV BAR ******************************************
+// Builds a sticky anchor-link bar below the first .c-banner-one on the page.
+// Links target the topmost .editor-content direct-child ancestor of each h2.
+// Mobile: slide-out drawer.
+// Only runs on the "Anchor Menu Page" template (page-template-pg-section body class).
+// *****************************************************************************************
+if (document.body.classList.contains('page-template-pg-section')) {
+(function ($) {
+
+  var $banner = $('.c-banner-one').first();
+  var $editorContent = $('.editor-content').first();
+
+  if (!$banner.length || !$editorContent.length) return;
+
+  // ---- Collect h2s and resolve their topmost editor-content parent ----
+  var links = [];
+  var usedSlugs = {};
+
+  $editorContent.find('h2').each(function () {
+    var $h2 = $(this);
+    var text = $.trim($h2.text());
+    if (!text) return;
+
+    // Find the direct child of .editor-content that contains this h2
+    var $parent = $h2.closest('.editor-content > *');
+    if (!$parent.length) $parent = $h2;
+
+    // Build a unique slug from the h2 text
+    var baseSlug = 'section-' + text.toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+
+    var slug = baseSlug;
+    var counter = 2;
+    while (usedSlugs[slug] && $parent.attr('id') !== slug) {
+      slug = baseSlug + '-' + counter++;
+    }
+
+    if (!$parent.attr('id')) {
+      $parent.attr('id', slug);
+      usedSlugs[slug] = true;
+    } else {
+      slug = $parent.attr('id');
+      usedSlugs[slug] = true;
+    }
+
+    links.push({ text: text, target: slug });
+  });
+
+  if (!links.length) return;
+
+  // ---- Build HTML ----
+  var desktopItems = links.map(function (l) {
+    return '<li class="c-anchor-nav__item">'
+      + '<a href="#' + l.target + '" class="c-anchor-nav__link">' + $('<span>').text(l.text).html() + '</a>'
+      + '</li>';
+  }).join('');
+
+  var drawerItems = links.map(function (l) {
+    return '<li>'
+      + '<a href="#' + l.target + '" class="c-anchor-nav__drawer-link">' + $('<span>').text(l.text).html() + '</a>'
+      + '</li>';
+  }).join('');
+
+  var iconMenu = '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+  var iconChevron = '<svg class="c-anchor-nav__toggle-icon-chevron" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>';
+  var iconClose = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+
+  var barHTML = [
+    '<nav class="c-anchor-nav" id="c-anchor-nav" aria-label="Page sections">',
+    '  <button class="c-anchor-nav__mobile-toggle" aria-expanded="false" aria-controls="c-anchor-nav-drawer">',
+    '    <span class="c-anchor-nav__mobile-label">' + iconMenu + 'Page Sections</span>',
+    '    ' + iconChevron,
+    '  </button>',
+    '  <ul class="c-anchor-nav__list">' + desktopItems + '</ul>',
+    '</nav>',
+    '<div class="c-anchor-nav__spacer" id="c-anchor-nav-spacer" aria-hidden="true"></div>',
+    '<div class="c-anchor-nav__drawer" id="c-anchor-nav-drawer" role="dialog" aria-modal="true" aria-label="Page sections">',
+    '  <div class="c-anchor-nav__drawer-header">',
+    '    <span class="c-anchor-nav__drawer-title">Page Sections</span>',
+    '    <button class="c-anchor-nav__drawer-close" aria-label="Close page sections menu">' + iconClose + '</button>',
+    '  </div>',
+    '  <ul class="c-anchor-nav__drawer-list">' + drawerItems + '</ul>',
+    '</div>',
+    '<div class="c-anchor-nav__overlay" id="c-anchor-nav-overlay" aria-hidden="true"></div>',
+  ].join('');
+
+  $banner.after(barHTML);
+
+  var $bar     = $('#c-anchor-nav');
+  var $spacer  = $('#c-anchor-nav-spacer');
+  var $drawer  = $('#c-anchor-nav-drawer');
+  var $overlay = $('#c-anchor-nav-overlay');
+  var $toggle  = $bar.find('.c-anchor-nav__mobile-toggle');
+  var $closeBtn = $drawer.find('.c-anchor-nav__drawer-close');
+
+  var barOriginalTop = $bar.offset().top;
+  var barHeight      = $bar.outerHeight();
+  var isSticky       = false;
+
+  // Admin bar offset (WordPress)
+  function getAdminOffset() {
+    if (!document.body.classList.contains('admin-bar')) return 0;
+    return window.innerWidth <= 782 ? 46 : 32;
+  }
+
+  // ---- Sticky scroll handler ----
+  function onScroll() {
+    var scrollY = $(window).scrollTop();
+
+    if (scrollY >= barOriginalTop && !isSticky) {
+      isSticky = true;
+      $bar.addClass('is-sticky');
+      // Override top if admin bar is present
+      var adminOffset = getAdminOffset();
+      if (adminOffset) {
+        $bar[0].style.top = adminOffset + 'px';
+      }
+      $spacer.css({ display: 'block', height: barHeight + 'px' });
+      document.documentElement.style.setProperty('--anchor-nav-height', barHeight + adminOffset + 'px');
+    } else if (scrollY < barOriginalTop && isSticky) {
+      isSticky = false;
+      $bar.removeClass('is-sticky');
+      $bar[0].style.top = '';
+      $spacer.css({ display: 'none', height: '0' });
+      document.documentElement.style.setProperty('--anchor-nav-height', '0px');
+    }
+
+    updateActiveLink(scrollY);
+  }
+
+  // ---- Active link highlighting ----
+  function updateActiveLink(scrollY) {
+    var offset = barHeight + getAdminOffset() + 20;
+    var current = '';
+
+    links.forEach(function (l) {
+      var $el = $('#' + l.target);
+      if ($el.length && $el.offset().top - offset <= scrollY) {
+        current = l.target;
+      }
+    });
+
+    $bar.find('.c-anchor-nav__link').removeClass('is-active');
+    $drawer.find('.c-anchor-nav__drawer-link').removeClass('is-active');
+
+    if (current) {
+      $bar.find('.c-anchor-nav__link[href="#' + current + '"]').addClass('is-active');
+      $drawer.find('.c-anchor-nav__drawer-link[href="#' + current + '"]').addClass('is-active');
+    }
+  }
+
+  // ---- Smooth scroll with offset ----
+  $(document).on('click', '.c-anchor-nav__link, .c-anchor-nav__drawer-link', function (e) {
+    e.preventDefault();
+    var targetId = $(this).attr('href');
+    var $target = $(targetId);
+    if ($target.length) {
+      var offset = barHeight + getAdminOffset() + 16;
+      var targetPos = $target.offset().top - offset;
+      $('html, body').animate({ scrollTop: targetPos }, 480, 'swing');
+    }
+    closeDrawer();
+  });
+
+  // ---- Drawer open / close ----
+  function openDrawer() {
+    $drawer.addClass('is-open');
+    $overlay.addClass('is-open');
+    $toggle.addClass('is-open').attr('aria-expanded', 'true');
+    $('body').css('overflow', 'hidden');
+    // Move focus into the drawer for a11y
+    $closeBtn.trigger('focus');
+  }
+
+  function closeDrawer() {
+    $drawer.removeClass('is-open');
+    $overlay.removeClass('is-open');
+    $toggle.removeClass('is-open').attr('aria-expanded', 'false');
+    $('body').css('overflow', '');
+  }
+
+  $toggle.on('click', function () {
+    $drawer.hasClass('is-open') ? closeDrawer() : openDrawer();
+  });
+
+  $closeBtn.on('click', closeDrawer);
+  $overlay.on('click', closeDrawer);
+
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  // ---- Bind scroll & resize ----
+  $(window).on('scroll.anchorNav', onScroll);
+
+  $(window).on('resize.anchorNav', function () {
+    barHeight = $bar.outerHeight();
+    if (!isSticky) {
+      barOriginalTop = $bar.offset().top;
+    }
+    if (isSticky) {
+      $spacer.css('height', barHeight + 'px');
+      document.documentElement.style.setProperty('--anchor-nav-height', barHeight + getAdminOffset() + 'px');
+    }
+  });
+
+  // Run once on load
+  onScroll();
+
+}(jQuery));
+} // end page-template-pg-section guard
+// *********************** END ANCHOR SECTION NAV BAR *************************************

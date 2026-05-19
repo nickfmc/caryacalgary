@@ -1,0 +1,17 @@
+{
+    "name": "acf/stats-flip-block",
+    "title": "Stats & Quotes Flip",
+    "description": "Display stats that flip to reveal quotes on hover",
+    "icon": "chart-bar",
+    "script": [ "stats-flip" ],
+    "keywords": ["stats", "quotes", "flip", "infographic"],
+    "category": "myblocks",
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "stats-flip.php"
+    },
+    "example": {
+        "attributes": {}
+    },
+    "align": "full"
+}

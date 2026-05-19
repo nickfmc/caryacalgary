@@ -61,6 +61,8 @@ function maw_register_guten_script() {
   wp_register_script( 'swiper', get_template_directory_uri() .'/dist/swiper-bundle.min.js');  
   wp_register_script( 'effects', get_template_directory_uri() .'/template-part/block/slider/effect-material.min.js');
   wp_register_script( 'slider', get_template_directory_uri() .'/template-part/block/slider/slider.js', [ 'swiper' ,'effects' , 'acf' ], $version);
+  wp_register_script( 'service-pillars-slider', get_template_directory_uri() .'/template-part/block/service-pillars/service-pillars.js', [ 'swiper', 'acf' ], $version);
+  wp_register_script( 'stats-flip', get_template_directory_uri() .'/template-part/block/stats-flip/stats-flip.js', [ 'jquery', 'acf' ], $version);
   }
   add_action( 'init', 'maw_register_guten_script' ); 
 
@@ -71,6 +73,8 @@ function register_acf_blocks() {
   register_block_type(  get_stylesheet_directory() . '/template-part/block/slider/block.json' );
   register_block_type(  get_stylesheet_directory() . '/template-part/block/team/block.json' );
   register_block_type(  get_stylesheet_directory() . '/template-part/block/calendar/block.json' );
+  register_block_type(  get_stylesheet_directory() . '/template-part/block/stats-flip/block.json' );
+  register_block_type(  get_stylesheet_directory() . '/template-part/block/service-pillars/block.json' );
 
 }
 

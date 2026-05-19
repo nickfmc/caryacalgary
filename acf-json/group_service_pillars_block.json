@@ -1,0 +1,106 @@
+{
+    "key": "group_service_pillars_block",
+    "title": "Service Pillars Block",
+    "fields": [
+        {
+            "key": "field_service_pillars_section_title",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "Optional section title",
+            "required": 0
+        },
+        {
+            "key": "field_service_pillars_section_intro",
+            "label": "Section Introduction",
+            "name": "section_intro",
+            "type": "wysiwyg",
+            "instructions": "Optional introductory text",
+            "required": 0,
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_service_pillars_items",
+            "label": "Pillar Items",
+            "name": "pillar_items",
+            "type": "repeater",
+            "instructions": "Add service pillars (recommended: 3)",
+            "required": 1,
+            "layout": "block",
+            "button_label": "Add Pillar",
+            "sub_fields": [
+                {
+                    "key": "field_service_pillars_title",
+                    "label": "Pillar Title",
+                    "name": "pillar_title",
+                    "type": "text",
+                    "instructions": "e.g., Barrier Free Service",
+                    "required": 1
+                },
+                {
+                    "key": "field_service_pillars_content",
+                    "label": "Pillar Content",
+                    "name": "pillar_content",
+                    "type": "wysiwyg",
+                    "instructions": "Main content describing the pillar",
+                    "required": 1,
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_service_pillars_image",
+                    "label": "Pillar Image",
+                    "name": "pillar_image",
+                    "type": "image",
+                    "instructions": "Compelling image for this pillar",
+                    "required": 0,
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_service_pillars_quote",
+                    "label": "Quote",
+                    "name": "pillar_quote",
+                    "type": "textarea",
+                    "instructions": "Optional testimonial or quote",
+                    "required": 0,
+                    "rows": 4
+                },
+                {
+                    "key": "field_service_pillars_quote_author",
+                    "label": "Quote Author",
+                    "name": "pillar_quote_author",
+                    "type": "text",
+                    "instructions": "Optional attribution",
+                    "required": 0
+                },
+                {
+                    "key": "field_service_pillars_background_color",
+                    "label": "Background Color",
+                    "name": "background_color",
+                    "type": "color_picker",
+                    "instructions": "Optional custom background color",
+                    "required": 0,
+                    "default_value": "#593084"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/service-pillars-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "active": true
+}
